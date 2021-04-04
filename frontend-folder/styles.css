@@ -1,0 +1,59 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css?family=Nunito:400,700&display=swap');
+body {
+	 margin: 0;
+	 font-family: 'Nunito', 'sans-serif';
+	 font-size: xx-large;
+}
+ .container {
+	 width: 100%;
+	 margin: 0 auto;
+}
+#idsomething{
+	margin-left: 2%;
+}
+ header {
+	 width: 100%;
+	 padding: 1em 0;
+	 padding-right: 30%;
+	 background:black;
+}
+ header a {
+	 color: white;
+	 text-decoration: none;
+}
+ header a.logo {
+	 font-weight: bold;
+}
+ header nav {
+	 float: right;
+}
+ header nav ul {
+	 list-style-type: none;
+	 margin: 0;
+	 display: flex;
+}
+ header nav ul li a {
+	 padding: 1em;
+	 margin-left: 2em;
+}
+ header nav ul li a:hover {
+	 background: lightseagreen;
+}
+ h1 {
+	 margin-top: 2em;
+}
+ 
+@media only screen and (max-width: 725px) {
+
+	header{
+		padding-top: 2.5%;
+		padding-bottom: 1%;
+		padding-right: 0;
+	}
+ header a {
+	color: white;
+	text-decoration: none;
+	font-size: small;
+}
+}
