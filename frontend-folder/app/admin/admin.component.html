@@ -1,0 +1,39 @@
+<html>
+<header>
+  ADMIN PAGE
+</header>
+<div class="admincontainer">
+    <div id="result" *ngIf="this.httpUsr.isAdminloggedIn()">
+      Login successful, available options:
+    </div>
+    <div *ngIf="this.httpUsr.isAdminloggedIn()">
+      <div>
+        <button (click)="getAllUsers()">Show all users</button>
+      </div>
+      <div>
+        <button (click)="logout()">Logout</button>
+      </div>
+      <div>
+        <button (click)="getApps()">Download all apartments in XML format</button>
+      </div>
+      <div>
+        <button (click)="getAppsJson()">Download all apartments in JSON format</button>
+      </div>
+    </div>
+    <p id="httpResult"></p>
+    <div id="table" *ngIf="ShowUsers">
+      <table>
+        <tr>
+          <th>Username</th>
+          <th>Click for user details</th>
+        </tr>
+        <tr *ngFor="let User of userList | paginate: { itemsPerPage: 10, currentPage: p }" >
+          <td>{{User.userName}}</td>
+          <td><a href='#' routerLink="/userDetails/:{{User.userName}}">User Details</a></td>
+        </tr>
+      </table>
+  </div>
+  <div *ngIf="ShowUsers" class="text-right" >
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
+</div>

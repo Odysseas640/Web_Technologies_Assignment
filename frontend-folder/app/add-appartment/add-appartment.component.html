@@ -1,0 +1,145 @@
+<h1> Location</h1>
+    <div id="map" class="map"></div>
+    <div id="mouse-position"></div>
+<div id="Location" class="boxx">
+    <div class="text">
+        Neighborhood
+    </div>
+    <input class="input" type="text"  [(ngModel)]="hood">
+    <div class="text">
+        Capacity
+    </div>
+    <input class="input" type="text"  [(ngModel)]="city">
+    <div class="text">
+        Country
+    </div>
+    <input class="input" type="text"  [(ngModel)]="country">
+    <div class="text">
+        Address:
+    </div>
+    <input class="input" type="text" [(ngModel)]="tempApp.address">
+    <div class="text">
+        Access with public transport information:
+    </div>
+    <input class="input" type="text" [(ngModel)]="tempApp.accessInfo">
+</div>
+<div id="dates" class="boxx">
+    <h1>Dates available:</h1>
+    <div class="text">
+        From
+    </div>
+    <input class="input" type="date" [(ngModel)]="startD">
+    <div class="text">
+        To
+    </div>
+    <input class="input" type="date" [(ngModel)]="endD">
+</div>
+<div id="space" class="boxx">
+<h1> Information about the apartment's space:</h1>
+    <div class="text">
+        Maximum number of guests:
+    </div>
+    <input class="input" type="number" [(ngModel)]="tempApp.capacity">
+    <div class="text">
+        Size (square meters):
+    </div>
+    <input class="input" type="number" [(ngModel)]="tempApp.size">
+    <div class="text">
+        Floor:
+    </div>
+    <input class="input" type="text" [(ngModel)]="tempApp.floor">
+    <div id="appartmentType">
+        <div class="text">
+            Accomodation type:
+        </div>
+        <select class="input" [(ngModel)]="tempApp.type" id="choice">
+            <option value="private flat" >Private flat</option> 
+            <option value="shared room">Shared room</option>
+            <option value="full house">Full house</option>
+        </select>
+    </div>
+    <div class="text">
+        Number of beds:
+    </div>
+    <input class="input" type="number" [(ngModel)]="tempApp.numberOfBeds">
+    <div class="text">
+        Number of bedrooms:
+    </div>
+    <input class="input" type="number" [(ngModel)]="tempApp.numberOfBedrooms">
+    <div class="text">
+        Number of bathrooms:
+    </div>
+    <input class="input" type="number" [(ngModel)]="tempApp.numberOfBathrooms">
+    <div class="text">
+        Does the apartment have a living room?
+    </div>
+    <input class="input" type="checkbox" [(ngModel)]="tempApp.hasLivingRoom">
+    <div class="text">
+        Minimum price (per night)
+    </div>
+    <input class="input" type="number" [(ngModel)]="tempApp.price">
+    <div class="text">
+        Additional cost per person:
+    </div>
+    <input class="input" type="number" [(ngModel)]="tempApp.cost_per_person">
+</div>
+<div id="CheckBoxes">
+<div id="Services" class="boxx">
+<h1>Additional Services:</h1>
+<div class="checkbox_and_text">
+    <input class="checkbox" type="checkbox"[(ngModel)]="tempApp.hasWifi" id="id1">
+    <label for="id1">WiFi</label>
+</div>
+<div class="checkbox_and_text">
+    <input class="checkbox" type="checkbox" [(ngModel)]="tempApp.hasParking" id="id2">
+    <label for="id2">Parking</label>
+</div>
+<div class="checkbox_and_text">
+    <input class="checkbox" type="checkbox" [(ngModel)]="tempApp.hasheat" id="id3">
+    <label for="id3">Air Conditioning</label>
+</div>
+<div class="checkbox_and_text">
+    <input class="checkbox" type="checkbox" [(ngModel)]="tempApp.hasTv" id="id6">
+    <label for="id6">Television </label>
+</div>
+<div class="checkbox_and_text">
+    <input class="checkbox" type="checkbox" [(ngModel)]="tempApp.hasElevator" id="id7">
+    <label for="id7">Elevator </label>
+</div>
+</div>
+<div id="Rules" class="boxx">
+    <h1> Apartment rules:</h1>
+<div class="checkbox_and_text">
+    <input class="checkbox" type="checkbox" [(ngModel)]="tempApp.allowPets" id="id4">
+    <label for="id4">Pets allowed</label>
+</div>
+<div class="checkbox_and_text">
+    <input class="checkbox" type="checkbox" [(ngModel)]="tempApp.allowSmoking" id="id5">
+    <label for="id5">Smoking allowed</label>
+</div>
+<div class="checkbox_and_text">
+    <input class="checkbox" type="checkbox" [(ngModel)]="tempApp.idAvailable" id="ava">
+    <label for="ava">Is apartment available for gatherings, parties e.t.c?</label>
+</div>
+<div class="text">
+    Minimum mandatory dates to book:
+</div>
+    <input class="input" type="number" [(ngModel)]="tempApp.minDatesToBook">
+</div>
+</div>
+
+<!----------------------------------------------------------------------------->
+<h1>Please provide a small description of the apartment below</h1>
+<textarea [(ngModel)]="tempApp.description"> </textarea>
+<h1>Please choose a representative image of the apartment</h1>
+
+<div id="uploadImage">
+    <input class="input" type="file" (change)="onFileChanged($event)">
+    <img [src]="imgURL" height="200" *ngIf="imgURL">
+</div>
+
+Received Image:
+
+{{ receivedImageData['pic'] }}
+<img [src]="convertedImage" >
+<button id="go_button" (click)="PostIt()">GO</button>
