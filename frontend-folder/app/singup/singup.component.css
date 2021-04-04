@@ -1,0 +1,65 @@
+html {
+  background: url('../../assets/signup_background_2.jpg') white no-repeat;
+  background-size: cover;
+  font-weight: bold;
+  font-size: 110%;
+  background-attachment: fixed;
+  text-align: center;
+  background-position: center;
+}
+#pleaseFillOut_sabot {
+padding-top: 20px;
+}
+#pleaseFillOut {
+  border-radius: 10px;
+  margin-bottom: 20px;
+  background-color: white;
+  opacity: 75%;
+  text-align: center;
+  width: 60%;
+  max-width: 950px;
+  min-width: 400px;
+  font-size: 160%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+.pleaseTypeStuff {
+  border-radius: 10px;
+  padding-top: 10px;
+  font-family: "Calibri";
+  text-align: center;
+  background-color: white;
+  opacity: 75%;
+  width: 370px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.pleaseTypeStuff:hover {
+  opacity: 90%;
+}
+.form {
+  margin-bottom: 20px;
+}
+#checker{
+  transform: scale(2);
+  margin-bottom: 25px;
+}
+button {
+  border-radius: 10px;
+  margin-top:5px;
+  font-size: xx-large;
+  background-color:white;
+  margin-bottom: 40px;
+  padding: 20px;
+  color:black;
+  opacity: 75%;
+  cursor: pointer;
+  /*font-weight: bold;*/
+}
+button:hover{
+  background-color:lightseagreen;
+  opacity: 100%;
+}

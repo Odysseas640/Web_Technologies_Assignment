@@ -1,0 +1,77 @@
+<html>
+<!--<h1>BECOME A PART OF AIRBNB</h1>-->
+<div id="pleaseFillOut_sabot">
+    <div id="pleaseFillOut">
+        Please fill out the following form
+    </div>
+</div>
+<div class="pleaseTypeStuff">
+    <div class="text">
+        Username:
+    </div>
+    <div class="form">
+        <input type="text" [(ngModel)]="newUser.userName">
+    </div>
+    <div class="text">
+        Give your password below:
+    </div>
+    <div class="form">
+        <input type="password" [(ngModel)]="newUser.password">
+    </div>
+    <div class="text">
+        Please confirm your password:
+    </div>
+    <div class="form">
+        <input type="password" [(ngModel)]="secondPassword">
+    </div>
+    <div class="text">
+        Email:
+    </div>
+    <div class="form">
+        <input type="text" [(ngModel)]="newUser.email">
+    </div>
+    <div class="text">
+        First Name:
+    </div>
+    <div class="form">
+        <input type="text" [(ngModel)]="newUser.firstName">
+    </div>
+    <div class="text">
+        Last Name:
+    </div>
+    <div class="form">
+        <input type="text" [(ngModel)]="newUser.lastName">
+    </div>
+    <div class="text">
+        Phone Number:
+    </div>
+    <div class="form">
+        <input type="text" [(ngModel)]="newUser.phoneNumber"><br>
+    </div>
+    <div class="wouldLike">
+        Would you like to be a Host?
+    </div>
+    <div class="checkbox">
+        <input type="checkbox" name="checkbox" id="checker" [(ngModel)]="newUser.requestforOwner"><br>
+    </div>
+    <div class="wouldLike">
+        Would you like to be a Renter?
+    </div>
+    <div class="checkbox">
+        <input class="checkbox" type="checkbox" name="checkbox" id="checker" [(ngModel)]="newUser.renter">
+    </div>
+    <div class="form" >
+        Please choose your profile Picture
+        <input class="form" type="file" (change)="onFileChanged($event)">
+       <!---- <button (click)="sendImage()">Go</button>-->
+    </div>
+</div>
+    <button id="signUpButton" (click)="handleClick()">
+        <strong>Sign up</strong>
+    </button>
+<div *ngIf="success==true && show==true">Sign up succesfull.</div>
+<div *ngIf="success==false && show==true">Sign up failed Username allready in use.</div>
+<div *ngIf="success==true && show==true && newUser.requestforOwner">You will be notified when the admin confirms your request</div>    
+<div *ngIf="success">
+    <a href="#" routerLink="/login">Click here to go to the login page</a>
+</div>
