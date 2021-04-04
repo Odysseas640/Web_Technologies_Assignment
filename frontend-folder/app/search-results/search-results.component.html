@@ -1,0 +1,57 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div id="container">
+    <div id="extra-services" *ngIf="showReqs">
+        <button (click)="hideReqs()">Hide</button>
+        <div id='addReqBody'>
+            <input class="checkbox" type="checkbox"[(ngModel)]="wifi" id="id1">
+            <label for="id1">WiFi</label><br>
+            <input class="checkbox" type="checkbox" [(ngModel)]="parking" id="id2">
+            <label for="id2">Parking</label><br>
+            <input class="checkbox" type="checkbox" [(ngModel)]="ac" id="id3">
+            <label for="id3">Air Conditioning</label><br>
+            <input class="checkbox" type="checkbox" [(ngModel)]="pets" id="id4">
+            <label for="id4">Pets allowed</label><br>
+            <input class="checkbox" type="checkbox" [(ngModel)]="smoking" id="id5">
+            <label for="id5">Smoking allowed</label><br>
+            <input class="checkbox" type="checkbox" [(ngModel)]="tv" id="id6">
+            <label for="id6">Television </label><br>
+            <input class="checkbox" type="checkbox" [(ngModel)]="elevator" id="id7">
+            <label for="id7">Elevator/Ground floor</label>
+        </div>
+            Maximum Cost:
+            <input type="number" [(ngModel)]="maxCost"> <br>
+            Accomodation type:
+            <select [(ngModel)]="desiredType" id="choice">
+                <option *ngFor="let t of appartmentTypes" >{{t}}</option> 
+            </select>
+        <button id="lastButton" (click)="ApplyFilters()">Set filters</button>
+    </div>
+
+    <div id="result">
+        <ul id="hor">
+            <li *ngFor="let app of appList | paginate: { itemsPerPage: 10, currentPage: p }" routerLink="/appDetails/:id:{{app.id}}/:startD:{{this.startD}}/:endD:{{this.endD}}" >
+                    <img  src="data:image/jpeg;base64,{{app.main_pic}}"> <br>
+                    <div id="textForApp">
+                        <p>Price(Per Night): {{app.price}}</p>
+                        <p>Capacity : {{app.capacity}}</p>
+                        <p *ngIf="!app.reviews">zero reviews yet</p>
+                        <p>Type: {{app.type}}</p>
+                        <p>Number of beds: {{app.numberOfBeds}}</p>
+                        <p *ngIf="app.reviews">number of reviews: {{app.numberOfReviews}}</p>
+                        <p   *ngIf="app.reviews">average review: {{this.getAverage(app.reviews)}}</p>
+                    </div>
+                </li>
+        </ul>
+      <!--Including the pagination control.-->
+        <div class="text-right" >
+             <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+    
+</div>
+</body>
+</html>
