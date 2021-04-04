@@ -1,0 +1,91 @@
+<html>
+<body>
+    <div id="outer"> 
+    <h1>Account settings</h1>
+    <h2>{{usr.userName}}</h2>
+    <div id="profileOptions">  
+    <div class="li"><button (click)="setPs()">Change password</button></div>
+    <div class="li"><button (click)="setE()">Change email</button></div>
+    <div class="li"><button (click)="setN()">Change Phone number</button></div>
+    <div class="li"><button (click)="setPic()">Click here to change your profile picture</button></div>
+    <div class="li"><button (click)="setFN()" >Click here to change your first Name</button></div>
+    <div class="li"><button (click)="setLN()" >Click here to change your last Name</button></div>
+    </div>
+    <div *ngIf="changePs==true" class="changeStruffDialog">
+        <div class="typeStuff">
+            Give your new password below
+        </div>
+        <input class="form" type="password" [(ngModel)]="newpassword">
+        <div class="typeStuff">
+            Please retype your new password
+        </div>
+        <input class="form" type="password" [(ngModel)]="newpassword2">
+        <div class="typeStuff">
+            Please give your old password for confirmation
+        </div>
+        <input class="form" type="password" [(ngModel)]="oldpassword">
+        <div class="go_button">
+            <button (click)="changePsw()">GO</button>
+        </div>
+        <div class="go_button_result" id="loginResult"></div>
+    </div>
+    <div *ngIf="changeE==true" class="changeStruffDialog">
+        <div class="typeStuff">
+            Please provide you password for verification
+        </div>
+        <input class="form" type="password" [(ngModel)]="oldpassword">
+        <div class="typeStuff">
+            Please provide you new email adress below
+        </div>
+        <input class="form" type="text" [(ngModel)]="newEmail">
+        <div class="go_button">
+            <button (click)="changeEmail()">GO</button>
+        </div>
+        <div class="go_button_result" id="EmailResult"></div>
+    </div>
+    <div *ngIf="changeN==true" class="changeStruffDialog">
+        <div class="typeStuff">
+            Please type your new number below
+        </div>
+        <input class="form" type="text" [(ngModel)]="phn">
+        <div class="go_button">
+            <button (click)="changeNum()">GO</button>
+        </div>
+    </div>
+    <div *ngIf="changePic==true" class="changeStruffDialog">
+        <div class="typeStuff">
+            Your current Profile picture is
+        </div>
+        <img id="pikture" src="data:image/jpeg;base64,{{usr.pic}}">
+        <div class="typeStuff">
+            Please choose your new profile picture
+        </div>
+        <div>
+            <input class="form" type="file" (change)="onFileChanged($event)">
+            <img [src]="imgURL" height="200" *ngIf="imgURL">
+        </div>
+        <div class="go_button">
+            <button (click)="sendPic()"  value="upload" >GO</button>
+        </div>
+    </div>
+    <div *ngIf="changeFN==true" class="changeStruffDialog">
+        <div class="typeStuff">
+            Please type your new first name below
+        </div>
+        <input class="form" type="text" [(ngModel)]="newFirstName">
+        <div class="go_button">
+            <button (click)="changeFName()">GO</button>
+        </div>
+    </div>
+    <div *ngIf="changeLN==true" class="changeStruffDialog">
+        <div class="typeStuff">
+            Please type your new last name below
+        </div>
+        <input class="form" type="text" [(ngModel)]="newLastName">
+        <div class="go_button">
+            <button (click)="changeLName()">GO</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
