@@ -1,0 +1,41 @@
+
+html{
+  text-align: center;
+}
+textarea{
+  transform:scale(2.5);
+}
+button {
+  margin-top:2%;
+  font-size: x-large;
+  background-color: black;
+  margin-bottom: 2%;
+  padding: 2.5%;
+  color:white;
+  cursor: pointer;
+}
+button:hover{
+  background-color:lightseagreen;
+}
+li{
+  list-style-type: none;
+    display: block;
+    text-align: center;
+    padding-bottom: 2%;
+    background-color:white;
+   /* margin-left: 0;
+    margin-right: 0;
+    */color:black;
+    border: 15px solid white;
+    translate: scale(0.5);
+}
+.sendByMe{
+  border-radius: 6%;
+  background-color: lightblue;
+  margin-left: 55%;
+}
+.sendByOther{
+  border-radius: 6%;
+  margin-right: 55%;
+  background-color: lightgray;
+}

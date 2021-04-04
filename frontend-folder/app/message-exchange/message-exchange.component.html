@@ -1,0 +1,27 @@
+<html>
+<h1 style="margin-left: 32px;">Type your message here</h1>
+<p style="margin-left: 32px;">
+    <textarea [(ngModel)]="messageText" > </textarea>
+</p>
+<button  (click)="Send_Message()">Send</button>
+</html>
+<div id="history" >
+<h1>Older Messages:</h1>
+ <li *ngFor="let message of com_history | paginate: { itemsPerPage: 10, currentPage: p }">
+     <div *ngIf="message.senderUsn==this.SenderUsn" class="sendByMe">
+        <p> Sent By {{message.senderUsn}}</p> 
+        <p> Date: {{message.date}}</p>
+        <p>{{message.text}}</p>
+        <button *ngIf="message.senderUsn==this.SenderUsn" (click)="Delete_Message(message.id)">Delete this message</button> 
+     </div>
+    <div *ngIf="message.senderUsn!=this.SenderUsn" class="sendByOther">
+        <p> Sent By {{message.senderUsn}}</p> 
+        <p> Date: {{message.date}}</p>
+        <p>{{message.text}}</p>
+    </div>
+</li>
+ <!--Including the pagination control.-->
+ <div class="text-right" >
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+</div>
+</div>
