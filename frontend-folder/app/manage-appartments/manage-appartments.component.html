@@ -1,0 +1,28 @@
+<html>
+<body>
+<div id="wrapper">
+    <h1 id="first">{{this.usr.userName}}'s apartments</h1>
+    <button id="routerL" routerLink="/add-appartment/:{{usr.userName}}">
+        Add new apartment
+    </button>
+    <div id="apparmentList">
+    <div id="ul">
+        <div id="li" *ngFor="let app of appartmentList | paginate: { itemsPerPage: 10, currentPage: p }">
+            <img class="ap_pic" *ngIf="app.main_pic" src="data:image/jpeg;base64,{{app.main_pic}}">
+            <div id="floating_stuff">
+                <div class="ap_info">
+                    Price (per night): {{app.price}}
+                </div>
+                <div class="ap_info">
+                    Size (square meters) : {{app.size}}
+                </div>
+                <button id="seeMore" *ngIf="app!=null" id="linker"routerLink="/manageApp1/:id:{{app.id}}">Click here to see more</button>
+            </div>
+        </div>
+    <div class="text-right" >
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+    </div>
+</div>
+<!--</body>-->
+<!--</html>-->

@@ -1,0 +1,71 @@
+h1 {
+    font-size: 3vw;
+    text-align: center;
+    margin-bottom: 1%;
+    padding-top: 1%;
+  }
+  /*#wrapper {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }*/
+  #ul {
+    margin-top: 2%;
+    width: 70vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #li {
+    /*list-style-type: none;*/
+    background-color:white;
+    color:black;
+    border: 1vw solid black;
+  }
+  #li:hover {
+    border: 1vw solid lightseagreen;
+  }
+  #floating_stuff {
+    margin-top: 4vw;
+    float: right;
+    margin-right: 5vw;
+    text-align: center;
+  }
+  .ap_pic {
+    width: 30vw;
+  }
+  .ap_pic:hover {
+    transform: scale(1.05);
+  }
+  .ap_info {
+    font-size: 2vw;
+  }
+  .text-right {
+    margin-top: 4%;
+    text-align: center;
+  }
+  html {
+    background-color: azure;
+  }
+  button {
+    margin-top: 1%;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    padding: 1.3vw 2vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2vw;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  button:hover {
+    background-color:lightseagreen;
+  }
+  .text-right {
+    font-size: 2.5vw;
+  }
