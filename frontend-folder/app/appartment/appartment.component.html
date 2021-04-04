@@ -1,0 +1,29 @@
+<html>
+<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<div class="inputForm">
+    <div id="mainForm">
+				<div id="textTop">Find beautifull unique appartments now:</div>
+				<div class="inp">
+					<label for="location">location</label><br>
+					<input id="location" type="text" [(ngModel)]="location">
+				</div>
+				<div class="inp">
+					<label for="sd">Check In</label><br>
+					<input id="sd" type="date" [(ngModel)]="startD">
+				</div>
+				<div class="inp">
+        			<label for="ed">Check Out</label> <br>
+					<input id="ed" type="date" [(ngModel)]="endD">
+				</div>
+				<div class="lastinp">
+        			<label for="cap">Guests</label> <br>
+					<input id="cap" type="number" [(ngModel)]="capacity">
+				</div><br>
+				<button id="go" (click)="byLocation()">SEARCH</button>
+    </div>  
+</div>
+</body>
+</html>
