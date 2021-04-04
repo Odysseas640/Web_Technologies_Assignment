@@ -1,0 +1,37 @@
+<html>
+    <body>
+        <div id="userStuff_sabot">
+            <div id="userStuff">
+                <p>Username: {{current.userName}}</p>
+                <p>Password: {{current.password}}</p>
+                <p>Email: {{current.email}}</p>
+                <p>First Name: {{current.firstName}}</p>
+                <p>Last Name: {{current.lastName}}</p>
+                <p>Phone number: {{current.phoneNumber}}</p>
+                Profile picture:<br>
+                    <img id="image" src="data:image/jpeg;base64,{{current.pic}}">
+                <div *ngIf="current.requestforOwner"><button (click)="confirmRequest()"> CONFIRM CURRENT USERS REQUEST</button></div>
+                <div id="JSONDOWNLOADS">
+                    <div class="available_downloads">
+                        AVAILABLE JSON DOWNLOADS
+                    </div>
+                    <div *ngIf="current.owner"><button (click)="GetUserApps()">DOWNLOAD APARTMENTS PROVIDED BY THIS HOST</button>   </div>
+                    <div *ngIf="current.owner"><button (click)="GetUserReviews()">DOWNLOAD REVIEWS ON THIS HOST'S APARTMENTS</button></div>
+                    <div *ngIf="current.renter"><button (click)="getConducterRevies()">DOWNLOAD ALL REVIEWS PROVIDED BY THIS USER</button></div>
+                    <div *ngIf="current.renter"><button (click)="getBookingsClient()">DOWNLOAD ALL BOOKINGS BY THIS USER</button></div>
+                    <div *ngIf="current.owner"><button (click)="getBookingsHost()">DOWNLOAD ALL BOOKINGS ON THIS HOST'S APARTMENTS</button></div>
+                </div>
+                <div id="JSONDOWNLOADS">
+                    <div class="available_downloads">
+                        AVAILABLE XML DOWNLOADS
+                    </div>
+                    <div *ngIf="current.owner"><button (click)="GetUserAppsXML()">DOWNLOAD APARTMENTS PROVIDED BY THIS HOST</button>   </div>
+                    <div *ngIf="current.owner"><button (click)="GetUserReviewsXML()">DOWNLOAD REVIEWS ON THIS HOST'S APPARTMENTS</button></div>
+                    <div *ngIf="current.renter"><button (click)="getConducterReviesXML()">DOWNLOAD ALL REVIEWS PROVIDED BY THIS USER</button></div>
+                    <div *ngIf="current.renter"><button (click)="getBookingsClientXML()">DOWNLOAD ALL BOOKINGS BY THIS USER</button></div>
+                    <div *ngIf="current.owner"><button (click)="getBookingsHostXML()">DOWNLOAD ALL BOOKINGS ON THIS HOSTS APPARTMENTS</button></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

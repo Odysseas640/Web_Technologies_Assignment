@@ -1,0 +1,47 @@
+html {
+    /*background: url('p5.jpg') white no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;*/
+    padding-bottom: 4%;
+}
+#userStuff_sabot {
+    padding-top: 2%;
+}
+#userStuff {
+  background:radial-gradient(lightseagreen,white);
+  /*border-color: black 5px;*/
+  text-align: center;
+  border-radius: 45px;
+  font-weight: bold;
+  font-size: 2vw;
+  margin-top: 1%;
+  padding-top: 1%;
+  padding-bottom: 3%;
+  width: 60%;
+  display: block;
+  margin-left: auto;
+  background-color: white;
+  margin-right: auto;
+}
+.available_downloads {
+    margin-top: 30px;
+    font-size: 120%;
+    font-weight: bold;
+}
+#image {
+    max-width: 24%;
+}
+button {
+    border-radius: 10px;
+    margin-top: 1%;
+    font-size: 1.7vw;
+    background-color: black;
+    margin-bottom: 1%;
+    padding: 2.5%;
+    color:white;
+    cursor: pointer;
+}
+button:hover {
+    background-color:lightseagreen;
+}
