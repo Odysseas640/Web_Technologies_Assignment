@@ -1,0 +1,84 @@
+<html>
+    <head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+<div id="General">
+    <h2>space of the appartment:</h2>
+    <p>maximum capacity: {{cur.capacity}}</p>
+    <p>size(square meters): {{cur.size}} </p>
+    <p>number of beds {{cur.numberOfBeds}}</p>
+    <p>number of bathrooms: {{cur.numberOfBathrooms}}</p>
+    <p>type {{cur.type}}</p>
+    <p>number of bedrooms: {{cur.numberOfBedrooms}}</p>
+    <p *ngIf="cur.hasLivingRoom">This appartment has a living room</p>
+    <p *ngIf="cur.hasLivingRoom==false">This appartment does not have a living room</p>
+</div>
+<!--------------------------------------------------->
+
+<!-------------------------------------------------------------->
+<div id="services-rules">
+    <h2>Aditional Services</h2>
+    <ul id ="services">
+        <li  *ngIf="cur.hasheat"><p >AirConditioning</p></li>
+        <li *ngIf="cur.hasTv"><p >Television</p></li>
+        <li *ngIf="cur.hasElevator"><p >Elevator or ground floor </li>
+        <li *ngIf="cur.floor==0"><p >Elevator or ground floor </li>
+        <li *ngIf="cur.hasWifi"><p > Wifi</p></li>
+        <li *ngIf="cur.hasParking"><p >Parking</p></li>
+    </ul>
+    <h2>Appartment Rules:</h2>
+    <ul id ="rules">
+        <li><p *ngIf="cur.allowPets; else eb1">Pets are Allowed</p>
+        <ng-template  #eb1><p>Pets are not allowed</p></ng-template>
+        </li>
+        <li><p *ngIf="cur.allowSmoking; else eb2">Smoking is Allowed</p>
+        <ng-template  #eb2><p>Smoking is not allowed</p></ng-template>
+        </li>
+        <li><p *ngIf="cur.idAvailable; else eb3">Parties/social events Allowed</p>
+        <ng-template #eb3><p>Parties/social events not allowed</p></ng-template>
+        </li>
+        <li>Minumum dates you must book the appartment: {{cur.minDatesToBook}}</li>
+    </ul>
+</div>
+<!---------------------------------------------------------------------------------------->
+<div id="description">
+    <h2>Description:</h2>
+    <p>{{cur.description}}</p> 
+</div>
+<!------------------------------------------------------------------------------------------>
+<div id="Location">
+    <h2>Information about the appartment's location</h2>
+    <p>address:{{cur.address}}</p>
+    <p>neighborhood: {{cur.location.split("+")[2]}}</p>
+    <p> access: {{cur.accessInfo}}</p>
+    <div id="map" class="map"></div>
+    <div id="mouse-position"></div>
+</div>
+<div id="morePictures">
+    <h2>More Pictures:</h2>
+    <li *ngFor="let cur of imageList | paginate: { itemsPerPage: 3, currentPage: p }">
+        <img src="data:image/jpeg;base64,{{cur.pic}}">
+    </li>
+    <div class="text-right" >
+        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+    <br>
+</div>
+<button id="BookButton" (click)=Book()>Book it</button><br>
+<!----------------------------------------------->
+<!------------------------------------------------------------------------------------------>
+<!------------------------------------------------------------------------------------------->
+<h1>About the host:</h1>
+<div id="hostInfo">
+    <img id="hostProfilePic"  src="data:image/jpeg;base64,{{ownerInfo.pic}}"><br>
+    <div id="Rest">
+        <p>email: {{ownerInfo.email}}</p>
+        <p>First name : {{ownerInfo.firstName}}</p>
+        <p>Last name: {{ownerInfo.lastName}}</p>
+        <p>Phone number: {{ownerInfo.phoneNumber}}</p>
+    </div>
+        <button style="clear:both" (click)="message()">Got any Questions Click here to messange the owner</button>
+    </div>
+</html>
+
+
