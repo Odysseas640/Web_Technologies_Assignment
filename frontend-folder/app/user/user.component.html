@@ -1,0 +1,54 @@
+<html>
+<div id="wrapper">
+<h1>Welcome  {{this.testUsr.userName}}</h1>
+<div id="admincontainer">
+    <div id="actions" *ngIf="this.http.loggedIn()"><h2>Available Actions</h2></div>
+    <nav *ngIf="this.http.loggedIn()"> 
+        <button routerLink="/editProfile">Edit Profile Data</button>
+        <div *ngIf="this.testUsr.isRenter"><button routerLink="/Recomended">Check out your recomendations</button></div>
+        <div *ngIf="this.testUsr.renter"><button routerLink="/appartment">Search for appartments</button></div>
+        <div *ngIf="this.testUsr.owner"><button   routerLink="/manageApp">Manage your appartments</button></div>
+        <button (click)="logout()" >Click here to logout</button><br>
+    </nav>
+</div>
+<div id="Bookings" *ngIf="testUsr.isRenter">
+<h1>My Bookings:</h1>
+<li *ngFor="let b of myBookings | paginate: {id: 'foo', itemsPerPage: 3, currentPage: p2 }">
+    <p>appId: {{b.appId}}</p>
+    <p>Booked:  dates: {{b.datesBooked}}</p>
+    <p>Location: {{b.location}}</p>
+    <p>Rate Appartment bellow </p> 
+    <p ><input  type="number" [(ngModel)]="temp"></p>
+    <p  ><button  (click)="rateAppartment(b.id,b.appId,temp)">Save review</button></p>
+</li>
+<div class="message-pagination" >
+    <pagination-controls  id="foo" (pageChange)="p2 = $event"></pagination-controls>
+ </div>
+ <!---------REVIEWED BOOKINGS-->
+ <h1>Already Reviewed:</h1>
+ <li *ngFor="let b of reviewedBookings | paginate: {id: 'bla', itemsPerPage: 3, currentPage: p3 }">
+    <p>appId: {{b.appId}}</p>
+    <p>Booked:  dates: {{b.datesBooked}}</p>
+    <p>Location: {{b.location}}</p>    
+</li>
+<div class="message-pagination" >
+    <pagination-controls  id="bla" (pageChange)="p3 = $event"></pagination-controls>
+ </div>
+</div>
+<div id="Messages" *ngIf="testUsr.isRenter" >
+<h1>My messages</h1>
+<li *ngFor="let m of messages | paginate: {id: 'bloom', itemsPerPage: 3, currentPage: p4 }">
+    <p>about appartment {{m.app_id}}</p>
+    <p>From: {{m.senderUsn}}</p>
+    <p>{{m.date}}</p>
+    <p>{{m.text}}</p>
+    <button (click)="DeleteMessage(m.id)">DELETE</button> <br>
+    <button (click)="MarkMessage(m.id)">MARK AS READ/IGNORE</button> <br>
+    <button (click)="Reply(m.senderUsn,m.app_id)">Reply</button> <br>
+</li>
+<div class="message-pagination" >
+    <pagination-controls  id="bloom" (pageChange)="p3 = $event"></pagination-controls>
+ </div>
+</div>
+</div>
+</html>
