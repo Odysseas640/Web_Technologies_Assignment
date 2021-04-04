@@ -1,0 +1,17 @@
+<div id="result">
+    <li *ngFor="let app of appList" routerLink="/appDetails/:id:{{app.id}}/:startD:{{this.startD}}/:endD:{{this.endD}}">
+        <img src="data:image/jpeg;base64,{{app.main_pic}}">
+        <div class="apartment_info">
+        	Price(Per Night): {{app.price}}
+        </div>
+        <div class="apartment_info">
+        	Capacity : {{app.capacity}}
+        </div>
+        <div class="apartment_info">
+        	Type: {{app.type}}
+        </div>
+        <div class="apartment_info">
+        	Country: {{app.location.split("+")[0]+","+app.location.split("+")[1]}}
+        </div>
+    </li>
+</div>
