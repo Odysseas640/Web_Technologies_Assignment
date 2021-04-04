@@ -1,0 +1,72 @@
+html {
+  background: url('../../assets/login.jpg') white no-repeat;
+  background-size: cover;
+  font-weight: bold;
+  font-size: 110%;
+  background-position: center;
+  height: 100%;
+  background-attachment: fixed;
+  position:fixed;
+  left: 0;
+  text-align: center;
+  min-height: 100%;
+  min-width: 100%;
+}
+#typeStuff {
+  background-color: white;
+  opacity: 75%;
+  width: 280px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin-top: 40px;
+  border-radius: 10px;
+/*    font-weight: bold;
+  min-width: 100px;
+  border-right: blueviolet;
+  border-left: blueviolet;*/
+}
+#typeStuff:hover {
+  opacity: 90%;
+}
+.form {
+  margin-bottom: 20px;
+}
+button {
+  margin-top: 30px;
+  font-size: xx-large;
+  background-color:white;
+  margin-bottom: 2%;
+  padding: 20px;
+  color:black;
+  opacity: 75%;
+  cursor: pointer;
+  border-radius: 10px;
+  font-weight: bold;
+/*    color: black;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 30px;
+  margin: 15px;*/
+}
+button:hover{
+  background-color:lightseagreen;
+  opacity: 95%;
+}
+@media only screen and (max-width: 825px) {
+  html{
+   background-image:none;
+   background-attachment: none;
+    background-color:white;
+    position: relative;
+  } 
+  #typeStuff{
+   width:75%;   
+   background-color:lightseagreen;
+  }
+}

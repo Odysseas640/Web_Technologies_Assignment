@@ -1,0 +1,20 @@
+<html>
+<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<div id="typeStuff">
+	<div class="text">
+		Username:
+	</div>
+	<div class="form">
+	<input type="text" [(ngModel)]="username">
+	</div>
+	<div class="text">
+		Password:
+	</div>
+	<div class="form">
+		<input type="password" [(ngModel)]="password">
+	</div>
+</div>
+<button (click)="handleClick()">LOGIN </button>
+</html>
