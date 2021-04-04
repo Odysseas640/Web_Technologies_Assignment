@@ -1,0 +1,206 @@
+h3 {
+    margin-top:1%;
+    text-align: center;
+    font-size: 2.2vw;
+}
+h1 {
+    font-size: 3vw;
+    text-align: center;
+    margin-bottom: 0.3%;
+}
+#map {
+    cursor: pointer;
+    height: 60vh;
+}
+.boxx {
+    font-weight: bold;
+    font-size: 2vw;
+    padding-top: 1%;
+    border-radius: 5vw;
+    text-align: center;
+    background:radial-gradient(lightseagreen,white);
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 3%;
+    margin-bottom: 3%;
+}
+#Location {
+    width: 45%;
+}
+.text {
+    margin-top: 3%;
+}
+.input {
+    font-size: 1.3vw;
+    /*margin-bottom: 1%;*/
+}
+#dates {
+    width: 40%;
+}
+.from_to {
+    margin-top: 1%;
+    font-size: 2vw;
+}
+.datesetter {
+    margin-bottom: 3%;
+}
+#space {
+    width: 40%;
+}
+#rules {
+    width: 40%;
+}
+.checkbox_and_text {
+    font-size: 2vw;
+    text-align: left;
+    margin-left: 20%;
+}
+#services {
+    width: 40%;
+}
+li {
+    margin-left:5%;
+    margin-right: 5%;
+}
+option {
+    font-size: x-large;
+}
+label {
+    margin-left: 2.5%;
+}
+html {
+    background-color: cadetblue;
+    background-size: cover;
+}
+.check {
+    width:1.5vw;
+    height:1.5vw;
+}
+textarea {
+    font-size: 2vw;
+    margin-top:2%;
+    width: 70vw;
+    height: 40vh;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+    border-width:thick;
+    border-color:black;
+}
+textarea:hover {
+    border-color: lightseagreen;
+}
+#mainPic {
+    width: 65%;
+}
+#main_pic {
+    margin-top: 1%;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.upload_pic {
+    font-size: 3vw;
+    text-align: center;
+    margin-top: 2%;
+}
+.impgUpload {
+    margin-top: 1%;
+    margin-bottom: 2%;
+    font-size: 1.5vw;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+img {
+    cursor: pointer;
+}
+img:hover {
+    transform:scale(1.1);
+}
+#additional_pictures {
+    width: 60%;
+}
+.more_Picture {
+    max-height: 20vw;
+    max-width: 40vw;
+    margin-top: 2%;
+}
+.delete_pic_button {
+    float: right;
+    margin-top: 8vw;
+    margin-right: 2vw;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    padding: 1.3vw 1.3vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.3vw;
+    cursor: pointer;
+}
+.delete_pic_button:hover {
+    background-color: lightseagreen;
+}
+.page_controls {
+    font-size: 2vw;
+}
+li {
+    list-style-type: none;
+}
+.li {
+    margin-top: 2%;
+    list-style-type: none;
+    border: 1vw solid black;
+}
+.li:hover {
+    border: 1vw solid lightseagreen;
+}
+#messages {
+    width: 60%;
+}
+.message1 {
+    font-size: 2vw;
+}
+.button2 {
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    padding: 1vw 1.5vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1.6vw;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+.button2:hover {
+    background-color: lightseagreen;
+}
+.button1 {
+    border-radius: 1vw;
+    background-color: black;
+    color: white;
+    padding: 1.3vw 2vw;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 2vw;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.button1:hover {
+    background-color: lightseagreen;
+}
+#update_button {
+    margin-bottom: 3%;
+}

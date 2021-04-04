@@ -1,0 +1,180 @@
+<h3>Change the apartment components you want and leave the others the same</h3>
+<h1> Apartment's location </h1>
+    <div id="map" class="map"></div>
+    <div id="mouse-position"></div>
+<div class="boxx" id="Location">
+    <div class="text">
+        Neighborhood:
+    </div>
+    <input class="input" type="text" [(ngModel)]="hood">
+    <div class="text">
+        City:
+    </div>
+    <input class="input" type="text" [(ngModel)]="city">
+    <div class="text">
+        Country:
+    </div>
+    <input class="input" type="text" [(ngModel)]="country">
+    <div class="text">
+        Address:
+    </div>
+    <input class="input" type="text" [(ngModel)]="cur.address">
+    <div class="text">
+        Ways to access the appartment<br>using public transport:
+    </div>
+    <input class="input" type="text" [(ngModel)]="cur.accessInfo">
+</div>
+<div class="boxx" id="dates">
+    <h1>Apartment Available</h1>
+    <div class="from_to">
+        From
+    </div>
+    <input class="datesetter" type="date" [(ngModel)]="startD">
+    <div class="from_to">
+        To
+    </div>
+    <input class="datesetter" type="date" [(ngModel)]="endD">
+</div>
+<div class="boxx" id="space">
+    <h1>Apartment's space</h1> 
+    <div class="text">
+        Size (square meters)
+    </div>
+    <input class="input" type="number" [(ngModel)]="cur.size">
+    <div class="text">
+        Maximum capacity
+    </div>
+    <input class="input" type="number" [(ngModel)]="cur.capacity">
+    <div class="text">
+        Minimum price:
+    </div>
+    <input class="input" type="number" [(ngModel)]="cur.price">
+    <div class="text">
+        Additional cost per person
+    </div>
+    <input class="input" type="number" [(ngModel)]="cur.cost_per_person"> <br>
+    <label for="livingRoomCheck">Living room:  </label>
+    <input class="input" id="livingRoomCheck" class="check"  type="checkbox"  [(ngModel)]="cur.hasLivingRoom">
+    <div class="text">
+        Number of beds:
+    </div>
+    <input class="input" type="number" [(ngModel)]="cur.numberOfBeds">
+    <div class="text">
+        Number of bedrooms
+    </div>
+    <input class="input" type="number" [(ngModel)]  ="cur.numberOfBedrooms">
+    <div class="text">
+        Number of bathrooms
+    </div>
+    <input class="input" type="number" [(ngModel)]  ="cur.numberOfBathrooms">
+    <div class="text">
+        Accomodation type:
+    </div>
+        <select class="input" [(ngModel)]="cur.type">
+            <option value="private flat" >Private flat</option> 
+            <option value="shared room">Shared room</option>
+            <option value="full house">Full house</option>
+        </select>
+</div>
+<!-- <div id="CheckBoxes"> -->
+<div class="boxx" id="rules">
+    <h1>Apartment rules:</h1>
+    <div class="checkbox_and_text">
+        <input  class="check"  type="checkbox" [(ngModel)]="cur.allowPets" id="id4">
+        <label for="id4">Pets allowed</label>
+    </div>
+    <div class="checkbox_and_text">
+        <input class="check" type="checkbox" [(ngModel)]="cur.allowSmoking" id="id5">
+        <label for="id5">Smoking allowed</label>
+    </div>
+    <div class="checkbox_and_text">
+        <input class="check" type="checkbox" [(ngModel)]="cur.idAvailable" id="ava">
+        <label for="ava">Is apartment available for gatherings, parties e.t.c?</label>
+    </div>
+    <div class="text">
+        Minimum mandatory dates to book:
+    </div>
+    <input class="input" type="number" [(ngModel)]="cur.minDatesToBook">
+</div>
+<div class="boxx" id="services">
+    <h1>Additional Services</h1>
+    <div class="checkbox_and_text">
+        <input class="check"  type="checkbox"[(ngModel)]="cur.hasWifi" id="id1">
+        <label for="id1">WiFi</label>
+    </div>
+    <div class="checkbox_and_text">
+        <input class="check"  type="checkbox" [(ngModel)]="cur.hasParking" id="id2">
+        <label for="id2">Parking</label>
+    </div>
+    <div class="checkbox_and_text">
+        <input class="check"  type="checkbox" [(ngModel)]="cur.hasheat" id="id3">
+        <label for="id3">Air Conditioning</label>
+    </div>
+    <div class="checkbox_and_text">
+        <input class="check"  type="checkbox" [(ngModel)]="cur.hasTv" id="id6">
+        <label for="id6">Television </label>
+    </div>
+    <div class="checkbox_and_text">
+        <input class="check"  type="checkbox" [(ngModel)]="cur.hasElevator" id="id7">
+        <label  for="id7">Elevator </label>
+    </div>
+</div>
+<!-- </div> -->
+<div id="description">
+    <textarea [(ngModel)]="cur.description"> </textarea>
+</div>
+<div class="boxx" id="mainPic">
+    <h1> Apartment's main/representing picture</h1>
+    <img id="main_pic" src="data:image/jpeg;base64,{{cur.main_pic}}">
+    <div class="upload_pic">
+        Upload a new main picture below
+    </div>
+    <div class="image_select">
+        <input class="impgUpload" type="file" (change)="onFileChanged($event)">
+    </div>
+    <div>
+        <img [src]="imgURL" height="200" *ngIf="imgURL">
+        <button class="button1" (click)="changeMainPic()">Change picture</button>
+    </div>
+</div>
+<div class="boxx" id="additional_pictures">
+    <h1>More pictures of the apartment:</h1>
+<!--<img src="data:image/jpeg;base64,{{this.imageList[0].pic}}" id="photo-id"/>-->
+    <li *ngFor="let cur of imageList | paginate: {id: 'bla', itemsPerPage: 3, currentPage: p }">
+        <img class="more_Picture" src="data:image/jpeg;base64,{{cur.pic}}">
+        <button class="delete_pic_button" (click)="DeleteImage(cur.id)">Delete<br>picture</button>
+    </li>
+    <div class="page_controls" >
+        <pagination-controls id="bla" (pageChange)="p = $event"></pagination-controls>
+    </div>
+    <!----------------------------------------------->
+    <div class="upload_pic">
+        Add a new Picture Below
+    </div>
+    <div>
+        <input class="impgUpload" type="file" (change)="onFileChanged($event)">
+    </div>
+    <button class="button1" (click)="AddPic()"  value="upload" >GO</button>
+</div>
+<div class="boxx" id="messages">
+    <h1>Questions About the Apartment/Chat</h1>
+    <li class="li" *ngFor="let m of messages  | paginate: {id: 'foo', itemsPerPage: 3, currentPage: p2 }" >
+        <div class="message1">
+            From: {{m.senderUsn}}
+        </div>
+        <div class="message1">
+            Date: {{m.date}}
+        </div>
+        <div class="message1">
+            Message: {{m.text}}
+        </div>
+        <button class="button2" (click)="Reply(m.senderUsn)">Reply</button>
+        <button class="button2" (click)="deleteMessage(m.id)">Delete message</button>
+        <button class="button2" (click)="Mark(m.id)">Mark as read/Ignore</button>
+    </li>
+ <!--Including the pagination control.-->
+ <div class="page_controls" >
+    <pagination-controls  id="foo" (pageChange)="p2 = $event"></pagination-controls>
+ </div>
+</div>
+<button id="update_button" class="button1" (click)="PostIt()">UPDATE APARTMENT</button>
